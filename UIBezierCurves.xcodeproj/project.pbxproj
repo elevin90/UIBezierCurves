@@ -13,6 +13,7 @@
 		60446F1A2520E4F70085001B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60446F182520E4F70085001B /* Main.storyboard */; };
 		60446F1C2520E4F80085001B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60446F1B2520E4F80085001B /* Assets.xcassets */; };
 		60446F1F2520E4F80085001B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60446F1D2520E4F80085001B /* LaunchScreen.storyboard */; };
+		60446F2C2520E5340085001B /* BezierCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60446F2B2520E5340085001B /* BezierCurves.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		60446F1B2520E4F80085001B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60446F1E2520E4F80085001B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60446F202520E4F80085001B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60446F2B2520E5340085001B /* BezierCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierCurves.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				60446F122520E4F70085001B /* AppDelegate.swift */,
 				60446F142520E4F70085001B /* SceneDelegate.swift */,
+				60446F2B2520E5340085001B /* BezierCurves.swift */,
 				60446F162520E4F70085001B /* ViewController.swift */,
 				60446F182520E4F70085001B /* Main.storyboard */,
 				60446F1B2520E4F80085001B /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			files = (
 				60446F172520E4F70085001B /* ViewController.swift in Sources */,
 				60446F132520E4F70085001B /* AppDelegate.swift in Sources */,
+				60446F2C2520E5340085001B /* BezierCurves.swift in Sources */,
 				60446F152520E4F70085001B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
