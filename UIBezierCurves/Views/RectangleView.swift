@@ -2,6 +2,8 @@ import UIKit
 
 class RectangleView: UIView {
 
+    private var strokeBorder: DashBorderLayer?
+    
     @IBInspectable var color: UIColor = .clear {
         didSet { backgroundColor = color }
     }
@@ -9,7 +11,12 @@ class RectangleView: UIView {
     override func draw(_ rect: CGRect) {
         backgroundColor = .gray
         backgroundColor?.set()
+        isUserInteractionEnabled = true
         UIBezierPath(rect: rect).fill()
+    }
+    
+    override var canBecomeFocused: Bool {
+        return true
     }
     
     override func didMoveToSuperview() {
@@ -48,6 +55,20 @@ class RectangleView: UIView {
         gView.transform = gView.transform.scaledBy(x: gesture.scale,
                                                    y: gesture.scale)
         gesture.scale = 1
+    }
+    
+    func resetFocus() {
+        strokeBorder?.removeFromSuperlayer()
+    }
+    
+    func addBorder() {
+        guard strokeBorder?.superlayer == nil else {
+            return
+        }
+        strokeBorder = DashBorderLayer(view: self)
+        if let border = strokeBorder {
+            layer.addSublayer(border)
+        }
     }
 }
 

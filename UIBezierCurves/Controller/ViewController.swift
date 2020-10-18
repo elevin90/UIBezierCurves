@@ -28,8 +28,6 @@ class ViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         view.addSubview(canvasView)
-        canvasView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                               action: #selector(handleSelection(_:))))
         NSLayoutConstraint.activate([
             canvasView.topAnchor.constraint(equalTo: stackBackgroundView.bottomAnchor),
             canvasView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -39,50 +37,19 @@ class ViewController: UIViewController {
         canvasView.backgroundColor = UIColor.white
     }
     
-    @objc func handleSelection(_ sender: UITapGestureRecognizer) {
-        guard figureType == .line else {
-            return
-        }
-        self.currentLocation = sender.location(in: canvasView)
-        draw()
-        canvasView.setNeedsDisplay()
-    }
-    
     @IBAction func handleLines(_ sender: Any) {
-        figureType = .line
+        canvasView.figureType = .line
     }
     
     @IBAction func handleRectangle(_ sender: Any) {
-        figureType = .rectangle
-        canvasView.figure = nil
-        currentLocation = view.center
-        canvasView.setNeedsDisplay()
-        draw()
+        canvasView.figureType = .rectangle
+        canvasView.currentLocation = view.center
     }
     
     @IBAction func handleEllipse(_ sender: Any) {
-        figureType = .ellipse
+        canvasView.figureType = .ellipse
         canvasView.figure = nil
         canvasView.setNeedsDisplay()
-    }
-    
-    func draw() {
-        if figureType == .none || currentLocation == nil {
-            return
-        }
-        guard let location = currentLocation else { return }
-        switch figureType {
-        case .line:
-            if canvasView.figure == nil {
-                canvasView.figure = Line(initialCoordinates: location)
-            }
-            canvasView.figure?.points.append(location)
-        case .rectangle:
-            canvasView.drawRectangle()
-            canvasView.setNeedsDisplay()
-        default:
-            break
-        }
     }
 }
 
