@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVp-fm-z5y">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,16 +11,66 @@
         <!--View Controller-->
         <scene sceneID="5PF-wo-GN7">
             <objects>
-                <viewController id="wVp-fm-z5y" sceneMemberID="viewController">
+                <viewController id="wVp-fm-z5y" customClass="ViewController" customModule="UIBezierCurves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eu-RX-Tkg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-CP-uUa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="110"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-dt-Y0E">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-dt-Y0E">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-ER-qar" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="110"/>
+                                                <state key="normal" title="Line"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="handleLines:" destination="GQ6-vn-1Ua" eventType="touchUpInside" id="E3A-Md-qFY"/>
+                                                    <action selector="handleLines:" destination="wVp-fm-z5y" eventType="touchUpInside" id="dhn-Q0-QaC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAL-mV-nWJ" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="110"/>
+                                                <state key="normal" title="Rectangle"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="handleRectangle:" destination="wVp-fm-z5y" eventType="touchUpInside" id="46d-MN-mRJ"/>
+                                                    <action selector="handleRectangle:" destination="GQ6-vn-1Ua" eventType="touchUpInside" id="RQ7-Vn-lny"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSN-40-Cq2" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="110"/>
+                                                <state key="normal" title="Ellipse"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="handleEllipse:" destination="GQ6-vn-1Ua" eventType="touchUpInside" id="31b-E2-hao"/>
+                                                    <action selector="handleEllipse:" destination="wVp-fm-z5y" eventType="touchUpInside" id="UQ2-kO-Efw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,15 +79,22 @@
                                     <constraint firstItem="VmA-dt-Y0E" firstAttribute="leading" secondItem="Vqv-CP-uUa" secondAttribute="leading" id="GGB-Yl-PJs"/>
                                     <constraint firstAttribute="height" constant="220" id="I9C-KZ-3UQ"/>
                                     <constraint firstItem="VmA-dt-Y0E" firstAttribute="top" secondItem="Vqv-CP-uUa" secondAttribute="top" id="O1j-W6-Bz2"/>
-                                    <constraint firstAttribute="height" constant="150" id="WWQ-4z-vxD"/>
+                                    <constraint firstAttribute="height" constant="110" id="WWQ-4z-vxD"/>
                                     <constraint firstAttribute="trailing" secondItem="VmA-dt-Y0E" secondAttribute="trailing" id="e1Z-y3-JiA"/>
                                     <constraint firstAttribute="height" constant="120" id="jeI-8e-chF"/>
+                                    <constraint firstAttribute="height" constant="100" id="lPT-Fp-uLa"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="I9C-KZ-3UQ"/>
                                         <exclude reference="WWQ-4z-vxD"/>
                                         <exclude reference="jeI-8e-chF"/>
+                                        <exclude reference="lPT-Fp-uLa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="lPT-Fp-uLa"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
@@ -56,46 +113,49 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To6-bd-5kx" customClass="BezierCurves" customModule="UIBezierCurves" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="boundsColor">
-                                        <color key="value" systemColor="systemGreenColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hOc-H8-CXE"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="top" secondItem="hOc-H8-CXE" secondAttribute="top" id="1ca-ss-Sgc"/>
-                            <constraint firstItem="hOc-H8-CXE" firstAttribute="bottom" secondItem="To6-bd-5kx" secondAttribute="bottom" id="2If-Js-grZ"/>
-                            <constraint firstItem="hOc-H8-CXE" firstAttribute="trailing" secondItem="To6-bd-5kx" secondAttribute="trailing" id="3K0-oB-ob7"/>
-                            <constraint firstItem="To6-bd-5kx" firstAttribute="leading" secondItem="hOc-H8-CXE" secondAttribute="leading" id="8jU-Iz-KnK"/>
+                            <constraint firstItem="Vqv-CP-uUa" firstAttribute="top" secondItem="hOc-H8-CXE" secondAttribute="top" id="3fk-jb-ini"/>
+                            <constraint firstItem="Vqv-CP-uUa" firstAttribute="leading" secondItem="2eu-RX-Tkg" secondAttribute="leading" id="BHB-rp-obl"/>
                             <constraint firstItem="hOc-H8-CXE" firstAttribute="trailing" secondItem="Vqv-CP-uUa" secondAttribute="trailing" id="EFk-Hk-aSQ"/>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="leading" secondItem="2eu-RX-Tkg" secondAttribute="leading" id="EHK-Ry-HC1"/>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="top" secondItem="hOc-H8-CXE" secondAttribute="top" id="Kse-5N-7YY"/>
-                            <constraint firstItem="To6-bd-5kx" firstAttribute="top" secondItem="Vqv-CP-uUa" secondAttribute="bottom" id="P4i-8j-29P"/>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="leading" secondItem="2eu-RX-Tkg" secondAttribute="leading" id="UY4-WQ-elr"/>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="top" secondItem="hOc-H8-CXE" secondAttribute="top" id="UeZ-pY-dwt"/>
                             <constraint firstItem="hOc-H8-CXE" firstAttribute="trailing" secondItem="Vqv-CP-uUa" secondAttribute="trailing" id="ZMr-Tz-My4"/>
                             <constraint firstAttribute="trailing" secondItem="Vqv-CP-uUa" secondAttribute="trailing" id="b9G-l3-LrD">
                                 <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="Vqv-CP-uUa" secondAttribute="trailing" id="iMd-oi-0GF">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Vqv-CP-uUa" firstAttribute="leading" secondItem="hOc-H8-CXE" secondAttribute="leading" id="vg3-r9-QvK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="EFk-Hk-aSQ"/>
+                                <exclude reference="ZMr-Tz-My4"/>
                                 <exclude reference="1ca-ss-Sgc"/>
+                                <exclude reference="3fk-jb-ini"/>
+                                <exclude reference="BHB-rp-obl"/>
                                 <exclude reference="EHK-Ry-HC1"/>
                                 <exclude reference="Kse-5N-7YY"/>
                                 <exclude reference="UY4-WQ-elr"/>
                                 <exclude reference="UeZ-pY-dwt"/>
                                 <exclude reference="b9G-l3-LrD"/>
+                                <exclude reference="iMd-oi-0GF"/>
                                 <exclude reference="vg3-r9-QvK"/>
-                                <exclude reference="EFk-Hk-aSQ"/>
-                                <exclude reference="ZMr-Tz-My4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="3fk-jb-ini"/>
+                                <include reference="BHB-rp-obl"/>
+                                <include reference="iMd-oi-0GF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
@@ -107,34 +167,43 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="ZMr-Tz-My4"/>
                                 <include reference="1ca-ss-Sgc"/>
                                 <include reference="UY4-WQ-elr"/>
-                                <include reference="ZMr-Tz-My4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="EFk-Hk-aSQ"/>
                                 <include reference="Kse-5N-7YY"/>
                                 <include reference="vg3-r9-QvK"/>
-                                <include reference="EFk-Hk-aSQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="stackBackgroundView" destination="Vqv-CP-uUa" id="ulZ-JZ-7Dg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KT9-Lt-wSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GQ6-vn-1Ua" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1251" y="-999"/>
+            <point key="canvasLocation" x="-1252" y="-999.01477832512319"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="BAL-mV-nWJ">
+            <size key="intrinsicContentSize" width="69" height="30"/>
+        </designable>
+        <designable name="bBx-ER-qar">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="lSN-40-Cq2">
+            <size key="intrinsicContentSize" width="45" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
