@@ -29,6 +29,13 @@ import UIKit
                                                                action: #selector(handleSelection(_:))))
     }
     
+    func clear() {
+        subviews.forEach{
+            $0.removeFromSuperview()
+        }
+        setNeedsDisplay()
+    }
+    
     @objc func handleSelection(_ sender: UITapGestureRecognizer) {
         let tappedView = hitTest(sender.location(in: self), with: nil)
         for rectangle in rectangles {
@@ -38,7 +45,6 @@ import UIKit
                 rectangle.addBorder()
             }
         }
-       // resetFocus()
         guard figureType == .line else {
             return
         }
@@ -61,6 +67,9 @@ import UIKit
         case .rectangle:
             drawRectangle()
             setNeedsDisplay()
+        case .ellipse:
+            drawEllipse()
+            setNeedsDisplay()
         default:
             break
         }
@@ -75,6 +84,28 @@ import UIKit
         UIColor.blue.setStroke()
         path.lineWidth = 4
         path.stroke()
+    }
+    
+    private func drawEllipse() {
+        let defaultSize = CGSize(width: 200, height: 200)
+        let defaultOrigin = CGPoint(x: bounds.width / 2 - defaultSize.width / 2,
+                                    y: bounds.height / 2 - defaultSize.height / 2)
+        let defaultFrame = CGRect(origin: defaultOrigin, size: defaultSize)
+        let ellipse = EllipseView(frame: CGRect(x: 0,
+                                                y: defaultOrigin.y,
+                                                width: defaultFrame.width,
+                                                height: defaultFrame.height))
+        ellipse.alpha = 0
+        addSubview(ellipse)
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: []) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.2, animations: {
+                ellipse.alpha = 1
+            })
+            UIView.addKeyframe(withRelativeStartTime: 0.1, relativeDuration: 0.9, animations: {
+                ellipse.frame.origin.x = defaultOrigin.x
+            })
+        }
+
     }
     
     func drawRectangle() {

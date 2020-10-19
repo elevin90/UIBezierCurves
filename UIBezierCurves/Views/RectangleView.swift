@@ -37,7 +37,7 @@ class RectangleView: UIView {
     @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.superview)
         guard let gView = gesture.view else { return }
-        
+        addBorder()
         gView.center = CGPoint(x: gView.center.x + translation.x,
                                y: gView.center.y + translation.y)
         
@@ -46,12 +46,14 @@ class RectangleView: UIView {
     
     @objc func handleRotate(_ gesture: UIRotationGestureRecognizer) {
         guard let gView = gesture.view else { return }
+        addBorder()
         gView.transform = gView.transform.rotated(by: gesture.rotation)
         gesture.rotation = 0
     }
     
     @objc func handlePinch(_ gesture: UIPinchGestureRecognizer) {
         guard let gView = gesture.view else { return }
+        addBorder()
         gView.transform = gView.transform.scaledBy(x: gesture.scale,
                                                    y: gesture.scale)
         gesture.scale = 1

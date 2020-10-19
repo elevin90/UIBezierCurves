@@ -38,17 +38,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleLines(_ sender: Any) {
+        canvasView.clear()
+        canvasView.currentLocation = nil
         canvasView.figureType = .line
     }
     
     @IBAction func handleRectangle(_ sender: Any) {
-        canvasView.figureType = .rectangle
+        canvasView.clear()
         canvasView.currentLocation = view.center
+        canvasView.figureType = .rectangle
     }
     
     @IBAction func handleEllipse(_ sender: Any) {
+        canvasView.clear()
+        canvasView.currentLocation = view.center
         canvasView.figureType = .ellipse
-        canvasView.figure = nil
         canvasView.setNeedsDisplay()
     }
 }

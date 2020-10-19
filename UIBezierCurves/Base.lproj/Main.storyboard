@@ -24,6 +24,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-ER-qar" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="110"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Line"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -40,6 +41,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAL-mV-nWJ" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="110"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Rectangle"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -56,6 +58,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSN-40-Cq2" customClass="SelectButton" customModule="UIBezierCurves" customModuleProvider="target">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="110"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Ellipse"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -192,13 +195,13 @@
     </scenes>
     <designables>
         <designable name="BAL-mV-nWJ">
-            <size key="intrinsicContentSize" width="69" height="30"/>
+            <size key="intrinsicContentSize" width="77" height="33"/>
         </designable>
         <designable name="bBx-ER-qar">
-            <size key="intrinsicContentSize" width="30" height="30"/>
+            <size key="intrinsicContentSize" width="32" height="33"/>
         </designable>
         <designable name="lSN-40-Cq2">
-            <size key="intrinsicContentSize" width="45" height="30"/>
+            <size key="intrinsicContentSize" width="49" height="33"/>
         </designable>
     </designables>
     <resources>
